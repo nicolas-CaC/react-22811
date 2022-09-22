@@ -1,4 +1,5 @@
 import { useState } from "react"
+import banner from './../../../assets/img/banner.jpg'
 
 export const Home = () => {
 
@@ -14,10 +15,28 @@ export const Home = () => {
         setLoading(!loading)
     }
 
-    console.log(numero)
+    // console.log(numero)
+
+    const bannerCss = "mx-0 w-full h-[90vh] object-cover object-top "
+    const container = 'flex flex-col items-center';
+
+    setTimeout(() => {
+        stateChange()
+    }, 2500)
+
+    function stateChange() {
+        setLoading(false)
+        console.log(loading);
+    }
+
 
     return (
-        <>
+        <div className={ container }>
+            <img
+                src={ banner }
+                alt={ banner }
+                className={ bannerCss }
+            />
             <div>
                 { loading
                     ? "Esta Cargando"
@@ -28,6 +47,6 @@ export const Home = () => {
                 onClick={ handleClick }
             >Soy un boton y el numero es: { numero }
             </button>
-        </>
+        </div>
     )
 }

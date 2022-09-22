@@ -7,25 +7,23 @@ import './App.css';
 
 const App = () => {
 
-  const container = 'flex flex-col items-center';
-
   return (
-    <div className={ container }>
-      <BrowserRouter>
+
+    <BrowserRouter>
+      <header>
         <NavBar />
+      </header>
+      <main>
         <Routes>
           <Route path='/' element={ <Home /> } />
           <Route path='/servicios' element={ <Services /> } />
           <Route path='/nosotros' element={ <About /> } />
           <Route path='*' element={ <Home /> } />
         </Routes>
-      </BrowserRouter>
-    </div>
-
-
-
-
-
+      </main>
+      <footer>
+      </footer>
+    </BrowserRouter>
   );
 }
 
